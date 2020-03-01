@@ -85,3 +85,4 @@ fi
 
 source ~/.config/dynamic-prompt/prompt.sh
 PATH="${PATH}:${HOME}/.local/bin"
+export EDITOR='vim'

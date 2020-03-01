@@ -1,3 +1,6 @@
+# This logic was shamelessly copied from the default
+# Ubuntu .bashrc file.
+
 #force_color_prompt=yes
 
 case "$TERM" in
