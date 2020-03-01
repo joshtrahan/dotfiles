@@ -14,7 +14,10 @@ exit_status() {
 }
 
 git_status() {
-    echo "${txtrst}${bldcyn}$(find_git_branch)$(find_git_dirty) "
+    local git_branch=$(find_git_branch)
+    if [ "$git_branch" != '' ]; then
+        echo "${txtrst}${bldcyn}${git_branch}$(find_git_dirty) "
+    fi
 }
 
 prompt_date() {
