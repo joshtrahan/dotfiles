@@ -10,7 +10,7 @@ exit_status() {
         local exit_color="${bakred}${txtblk}"
     fi
 
-    echo "${txtrst}${exit_color}${exit_status} "
+    echo "${txtrst}${exit_color}${exit_status}${txtrst} "
 }
 
 git_status() {
@@ -25,8 +25,15 @@ prompt_base() {
     echo "${txtrst}${txtcyn}\u@\h${txtrst}:${bldpur}\w "
 }
 
+prompt_end() {
+    echo "${txtrst}\n$ "
+}
+
 generate_prompt() {
-    export PS1="$(prompt_base)$(exit_status)$(git_status)$(prompt_date) ${txtrst}\n$ "
+    # has to be first so it's not giving status of one of these functions
+    local cmd_exit_status=$(exit_status)
+
+    export PS1="$(prompt_base)${cmd_exit_status}$(git_status)$(prompt_date)$(prompt_end)"
 }
 
 PROMPT_COMMAND='generate_prompt'
