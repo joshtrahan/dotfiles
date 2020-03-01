@@ -85,3 +85,4 @@ if ! shopt -oq posix; then
 fi
 
 source ~/.config/dynamic-prompt/prompt.sh
+PATH="${PATH}:${HOME}/.local/bin"
