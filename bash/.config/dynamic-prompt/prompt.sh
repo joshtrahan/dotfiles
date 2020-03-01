@@ -10,11 +10,23 @@ exit_status() {
         local exit_color="${bakred}${txtblk}"
     fi
 
-    echo "${exit_color}${exit_status}${txtrst}"
+    echo "${txtrst}${exit_color}${exit_status} "
+}
+
+git_status() {
+    echo "${txtrst}${bldcyn}$(find_git_branch)$(find_git_dirty) "
+}
+
+prompt_date() {
+    echo "${txtrst}$(date) "
+}
+
+prompt_base() {
+    echo "${txtrst}${txtcyn}\u@\h${txtrst}:${bldpur}\w "
 }
 
 generate_prompt() {
-    export PS1="${txtcyn}\u@\h${txtrst}:${bldpur}\w $(exit_status) ${bldcyn}$(find_git_branch)$(find_git_dirty) ${txtrst}$(date) \n$ "
+    export PS1="$(prompt_base)$(exit_status)$(git_status)$(prompt_date) ${txtrst}\n$ "
 }
 
 PROMPT_COMMAND='generate_prompt'
