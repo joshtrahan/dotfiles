@@ -39,4 +39,4 @@ generate_prompt() {
     export PS1="$(prompt_base)${cmd_exit_status}$(git_status)$(prompt_date)$(prompt_end)"
 }
 
-PROMPT_COMMAND=$"${PROMPT_COMMAND} generate_prompt"
+PROMPT_COMMAND=$"${PROMPT_COMMAND}; generate_prompt"
