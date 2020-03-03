@@ -8,6 +8,11 @@ fi
 dotfiles_dir=$(dirname $(readlink -f $0))
 target_dir=${HOME}
 
+pushd $dotfiles_dir
+git submodule init
+git submodule sync
+popd
+
 if [ -e ${HOME}/.bashrc ]; then
     mv ${HOME}/.bashrc ${HOME}/.bashrc.existing
 fi
