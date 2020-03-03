@@ -14,7 +14,7 @@ git submodule sync
 popd
 
 if [ -e ${HOME}/.bashrc ]; then
-    mv ${HOME}/.bashrc ${HOME}/.bashrc.existing
+    mv ${HOME}/.bashrc ${HOME}/.bashrc.container
 fi
 
 stow -d $dotfiles_dir -t $target_dir bash

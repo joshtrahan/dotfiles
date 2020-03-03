@@ -2,8 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-if [ -e ${HOME}/.bashrc.existing ]; then
-    source ${HOME}/.bashrc.existing
+if [ -e ${HOME}/.bashrc.container ]; then
+    source ${HOME}/.bashrc.container
 fi
 
 # If not running interactively, don't do anything
