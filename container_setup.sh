@@ -1,6 +1,10 @@
 #!/bin/sh
 
 if ! [ -x "$(command -v stow)" ]; then
+    apt-get update
+    apt-get install -y stow
+fi
+if ! [ -x "$(command -v stow)" ]; then
     echo "GNU Stow not found. Aborting."
     exit 1
 fi
