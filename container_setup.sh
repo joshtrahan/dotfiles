@@ -12,14 +12,15 @@ if ! [ -x "$(command -v stow)" ]; then
         echo 'GNU Stow not found and cannot be installed. Aborting.'
         exit 1
     fi
-else
-    dotfiles_dir=$(dirname $(readlink -f $0))
-    target_dir=${HOME}
+fi
 
-    if [ -e ${HOME}/.bashrc ]; then
-        mv ${HOME}/.bashrc ${HOME}/.bashrc.container
-    fi
+dotfiles_dir=$(dirname $(readlink -f $0))
+target_dir=${HOME}
 
-    stow -d $dotfiles_dir -t $target_dir bash
-    stow -d $dotfiles_dir -t $target_dir tmux
+if [ -e ${HOME}/.bashrc ]; then
+    mv ${HOME}/.bashrc ${HOME}/.bashrc.container
+fi
+
+stow -d $dotfiles_dir -t $target_dir bash
+stow -d $dotfiles_dir -t $target_dir tmux
 fi
