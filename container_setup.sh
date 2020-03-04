@@ -1,8 +1,16 @@
 #!/bin/sh
 
-
 if ! [ -x "$(command -v stow)" ]; then
-    echo "source ${HOME}/.dotfiles/bash/.bashrc" > ${HOME}/.bashrc
+    if [ -x "$(command -v apt-get)" ]; then
+        apt-get update
+        apt-get install -y stow
+    elif [ -x "$(command -v apk)" ]; then
+        apk add stow
+    elif [ -x "$(command -v dnf)" ]; then
+        dnf -y install stow
+    else
+        echo 'GNU Stow not found and cannot be installed. Aborting.'
+        exit 1
 else
     dotfiles_dir=$(dirname $(readlink -f $0))
     target_dir=${HOME}
