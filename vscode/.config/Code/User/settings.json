@@ -4,7 +4,7 @@
     "window.zoomLevel": 0,
     "python.linting.pylintUseMinimalCheckers": false,
     "editor.formatOnSave": false,
-    "remote.containers.dotfiles.repository": "git@github.com:joshtrahan/dotfiles.git",
+    "remote.containers.dotfiles.repository": "https://github.com/joshtrahan/dotfiles.git",
     "remote.containers.dotfiles.targetPath": "~/.dotfiles",
     "remote.containers.dotfiles.installCommand": "~/.dotfiles/container_setup.sh"
 }
