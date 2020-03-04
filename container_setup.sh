@@ -2,8 +2,8 @@
 
 if ! [ -x "$(command -v stow)" ]; then
     if [ -x "$(command -v apt-get)" ]; then
-        apt-get update
-        apt-get install -y stow
+        apt-get update -qq
+        apt-get install -qqy stow
     elif [ -x "$(command -v apk)" ]; then
         apk add stow
     elif [ -x "$(command -v dnf)" ]; then
@@ -23,4 +23,3 @@ fi
 
 stow -d $dotfiles_dir -t $target_dir bash
 stow -d $dotfiles_dir -t $target_dir tmux
-fi
