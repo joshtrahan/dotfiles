@@ -11,6 +11,7 @@ if ! [ -x "$(command -v stow)" ]; then
     else
         echo 'GNU Stow not found and cannot be installed. Aborting.'
         exit 1
+    fi
 else
     dotfiles_dir=$(dirname $(readlink -f $0))
     target_dir=${HOME}
