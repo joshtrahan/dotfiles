@@ -16,7 +16,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    source ~/.config/git-aware-prompt/colors.sh
+    source ~/.config/dynamic-prompt/git-aware-prompt/colors.sh
 fi
 
 unset color_prompt force_color_prompt
