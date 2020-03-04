@@ -1,5 +1,5 @@
-source ~/.config/git-aware-prompt/prompt.sh
-source ~/.config/dynamic-prompt/determine_color.sh
+source ${HOME}/.config/dynamic-prompt/git-aware-prompt/prompt.sh
+source ${HOME}/.config/dynamic-prompt/determine_color.sh
 
 exit_status() {
     local exit_status=$?
