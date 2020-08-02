@@ -4,6 +4,8 @@
     "window.zoomLevel": 0,
     "python.linting.pylintUseMinimalCheckers": false,
     "editor.formatOnSave": false,
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "deepIndent",
     "remote.containers.dotfiles.repository": "https://github.com/joshtrahan/dotfiles.git",
     "remote.containers.dotfiles.targetPath": "~/.dotfiles",
     "remote.containers.dotfiles.installCommand": "~/.dotfiles/container_setup.sh"
