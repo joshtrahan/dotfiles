@@ -86,3 +86,4 @@ fi
 source ~/.config/dynamic-prompt/prompt.sh
 PATH="${PATH}:${HOME}/.local/bin"
 export EDITOR='vim'
+source /usr/share/doc/fzf/examples/key-bindings.bash
